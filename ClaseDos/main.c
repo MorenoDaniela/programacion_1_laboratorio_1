@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define CANTIDAD_DE_NUMEROS_PEDIDOS 5
+#define CANTIDAD 5
 #include <limits.h>
 
 int sacarPromedio (void);
-int calcularPromedio (int valorAcumulado, int cantidad, float *promedio);
+int calcularPromedio (int valorAcumulado, int CANTIDAD, float *promedio);
 int maximoMinimo (void);
 int minimo = INT_MAX;
 int maximo = INT_MIN;
@@ -22,7 +22,7 @@ int sacarPromedio (void)
     float promedio;
     int contador;
 
-    for (contador=0;contador<CANTIDAD_DE_NUMEROS_PEDIDOS;contador++)
+    for (contador=0;contador<CANTIDAD;contador++)
     {
         printf ("Ingrese un numero: ");
         scanf("%d",&numero);
@@ -32,7 +32,7 @@ int sacarPromedio (void)
 
     }
     //promedio = (float)acumulador/CANTIDAD_DE_NUMEROS_PEDIDOS; //pongo float para que de con coma el promedio
-    if (calcularPromedio(acumulador,CANTIDAD_DE_NUMEROS_PEDIDOS,&promedio)== 0)
+    if (calcularPromedio(acumulador,CANTIDAD,&promedio)== 0)
     {
         printf ("El promedio es: %.2f",promedio); //.2 para que me de con DOS decimales
     }
