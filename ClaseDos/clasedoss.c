@@ -5,14 +5,15 @@
 
 int sacarPromedio (void);
 int calcularPromedio (int valorAcumulado, int cantidad, float *promedio);
-int maximoMinimo (void);
-int minimo = INT_MAX;
-int maximo = INT_MIN;
+int maximoMinimo (void);//corregir esta linea el void
+int minimo = INT_MAX; //esta va adentro de sacar promedio
+int maximo = INT_MIN; //adentro de sacar promedio
 
 int main()
 {
     sacarPromedio ();
     //maximoMinimo ();
+    //falta linea return 0;
 }
 
 int sacarPromedio (void)
