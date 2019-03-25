@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+void claseUnoRepaso (void);
+
 /** \brief
  * pide un numero entre 1 y 10
  * \param no tiene parametro de entrada
@@ -30,12 +33,26 @@ float sacarPromedio (int suma, int cantidad);
   *1 para aprobado
   */
  int sacarAprobacion(int notaMinima, int nota);
+ /** \brief
+  * ingrese la nota de 5 alumnos (entre 0 y 10)
+  * informar cuantos aprobaron
+  * el promedio de notas de todos
+  * el promedio de notas de los que no aprobaron
+  * \param
+  * \param
+  * \return int
+  *
+  */
+
 
 
 
 
 int main()
 {
+    claseUnoRepaso();
+
+    /*
     int numero;
     float promedio;
     int estaAprobado;
@@ -53,6 +70,44 @@ int main()
             printf ("No aprobo.");
         }
         return 0;
+        */
+}
+
+void claseUnoRepaso()
+{
+    int notaIngresada;
+    int sumaTotal;
+    int sumaNoAprobados;
+    int contadorAprobados;
+    int contadorNoAprobados;
+    float promedioTotal;
+    float promedioNoAprobados;
+
+    sumaTotal=0;
+    sumaNoAprobados=0;
+    contadorAprobados=0;
+    contadorNoAprobados=0;
+
+    for (int i=0;i<5;i++)
+    {
+        notaIngresada=pedirNumero();
+        sumaTotal=sumaTotal+notaIngresada;
+        if(sacarAprobacion(6,notaIngresada))
+        {
+            contadorAprobados++;
+        }
+        else
+        {
+            contadorNoAprobados++;
+            sumaNoAprobados=sumaNoAprobados+notaIngresada;
+        }
+    }
+
+    promedioTotal=sacarPromedio(sumaTotal,i);
+    promedioNoAprobados=sacarPromedio(sumaNoAprobados,contadorNoAprobados);
+    printf ("Cuantos aprobaron %d",contadorAprobados);
+    printf ("Promedio de notas de todos ",promedioTotal);
+    printf ("El promedio de notas de los que no aprobaron: ",promedioNoAprobados);
 }
 
 int pedirNumero ()

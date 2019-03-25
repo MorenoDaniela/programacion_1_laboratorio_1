@@ -1,39 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define CANTIDAD_DE_NUMEROS_PEDIDOS 5
+#define CANTIDAD 3
 #include <limits.h>
 
 int sacarPromedio (void);
 int calcularPromedio (int valorAcumulado, int cantidad, float *promedio);
-int maximoMinimo (void);//corregir esta linea el void
-int minimo = INT_MAX; //esta va adentro de sacar promedio
-int maximo = INT_MIN; //adentro de sacar promedio
+int maximoMinimo (int valor, int *maximo, int *minimo);
+
 
 int main()
 {
     sacarPromedio ();
-    //maximoMinimo ();
-    //falta linea return 0;
+    //maximoMinimo (int valor, int *maximo, int *minimo);
+    return 0;
 }
 
-int sacarPromedio (void)
+int sacarPromedio ()
 {
     int numero;
     int acumulador=0;
     float promedio;
     int contador;
+    int minimo = INT_MAX;
+    int maximo = INT_MIN;
 
-    for (contador=0;contador<CANTIDAD_DE_NUMEROS_PEDIDOS;contador++)
+    for (contador=0;contador<CANTIDAD;contador++)
     {
         printf ("Ingrese un numero: ");
         scanf("%d",&numero);
         acumulador=acumulador+numero;
 
-        maximoMinimo (numero, &maximo, &minimo);
+        if (maximoMinimo(numero, &maximo, &minimo));
+        {
+            printf ("Error.");
+            break;
+        }
 
     }
-    //promedio = (float)acumulador/CANTIDAD_DE_NUMEROS_PEDIDOS; //pongo float para que de con coma el promedio
-    if (calcularPromedio(acumulador,CANTIDAD_DE_NUMEROS_PEDIDOS,&promedio)== 0)
+    //promedio = (float)acumulador/CANTIDAD; //pongo float para que de con coma el promedio
+    if (calcularPromedio(acumulador,CANTIDAD,&promedio)== 0)
     {
         printf ("El promedio es: %.2f",promedio); //.2 para que me de con DOS decimales
     }
@@ -61,17 +66,21 @@ int calcularPromedio (int valorAcumulado, int cantidad, float *promedio)
 
 int maximoMinimo (int valor, int *maximo, int *minimo)
 {
-    if (valor>*minimo)
+    int retorno = -1;
+    if (*maximo != NULL && *minimo != NULL)
     {
-        *minimo = valor;
-    }
+        if (valor>*minimo)
+        {
+            *minimo = valor;
+        }
 
-    if (valor>*maximo)
-    {
-        *maximo = valor;
+        if (valor>*maximo)
+        {
+            *maximo = valor;
+        }
+        retorno = 0;
     }
-
-    return 0;
+    return retorno;
 }
 
 
