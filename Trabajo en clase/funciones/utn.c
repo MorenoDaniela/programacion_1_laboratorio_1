@@ -1,23 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int getInt (char *mensaje, char *mensajeError, int minimo, int maximo, int reintentos, int *resultado);
-int getFloat (char *mensaje, char *mensajeError, float minimo, float maximo, int reintentos, float *resultado);
-int isValidInt (int numero, int minimo, int maximo);
-int isValidFloat (float numero, float minimo, float maximo);
-
-int main()
-{
-    /*int numeroIngresado;
-    getInt ("Ingrese el numero","Error", 0, 50, 2,&numeroIngresado);
-    printf ("\n El numero ingresado es %d",numeroIngresado);
-    */
-    float numeroIngresadoFlotante;
-    getFloat ("Ingrese el numero","Error", 0, 100, 2, &numeroIngresadoFlotante);
-    printf ("\n El numero ingresado es %f",numeroIngresadoFlotante);
-    return 0;
-}
-
 int isValidInt (int numero, int minimo, int maximo) //isIntInRange
 {
     if (numero>=minimo && numero<=maximo)
@@ -123,3 +106,4 @@ int isValidChar (char texto, char minimo, char maximo)
     }
     return 0;
 }
+
