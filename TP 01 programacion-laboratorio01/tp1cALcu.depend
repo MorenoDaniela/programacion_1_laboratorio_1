@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1554360355 source:c:\users\nick\desktop\workspace\tp1calcu\tp1calcu\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1554360200 source:c:\users\nick\desktop\workspace\tp1calcu\tp1calcu\funciones.c
+
+1554360200 c:\users\nick\desktop\workspace\tp1calcu\tp1calcu\funciones.h
+
