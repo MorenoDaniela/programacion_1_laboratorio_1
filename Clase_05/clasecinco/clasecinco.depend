@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1554656147 source:c:\users\nick\desktop\program-lab1\programacion_1_laboratorio_1\clase_05\clase 5\clasecinco\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1554655979 c:\users\nick\desktop\program-lab1\programacion_1_laboratorio_1\clase_05\clase 5\clasecinco\funciones.h
+
+1554656291 source:c:\users\nick\desktop\program-lab1\programacion_1_laboratorio_1\clase_05\clase 5\clasecinco\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
