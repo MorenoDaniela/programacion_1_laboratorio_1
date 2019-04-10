@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1554852478 source:/home/alumno/MorenoDenu/programacion_1_laboratorio_1/claseseis/main.c
+1554854063 source:/home/alumno/MorenoDenu/programacion_1_laboratorio_1/claseseis/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
