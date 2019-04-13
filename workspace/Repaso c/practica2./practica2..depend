@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1555161057 source:/home/alumno/Moreno/programacion_1_laboratorio_1/workspace/Repaso c/practica2./utn.c
+
+1555159945 source:/home/alumno/Moreno/programacion_1_laboratorio_1/workspace/Repaso c/practica2./main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1555159922 /home/alumno/Moreno/programacion_1_laboratorio_1/workspace/Repaso c/practica2./utn.h
+
