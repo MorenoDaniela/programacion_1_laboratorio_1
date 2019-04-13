@@ -3,15 +3,28 @@
 #include <string.h>
 #define TAMANIO 3
 typedef struct{
-    float precios ;
-    char codigos[7];
+    float precio ;
+    char codigo[7];
 }Producto;
 
 int getPrecio(char *mensaje,float *elPrecio);
 int getCodigo(char *mensaje,char *codigo);
 
 
+typedef struct{
+    float precio ;
+    char codigo[7];
+}Alumno;
+typedef struct{
+    float precio ;
+    char codigo[7];
+}Casa;
 
+typedef struct{
+    int edad ;
+    char nombre[7];
+    char raza[7];
+}Perro;
 
 
 /** \brief
@@ -29,42 +42,64 @@ int main()
     float precios[TAMANIO] ;
     char codigos[TAMANIO][7];
     //char codigos[7][TAMANIO];
+    int minumero;
     Producto unProducto;
+    Producto ArrayDeProductos[TAMANIO];
+    Perro miPerro;
+
     int i;
     int j;
-    while(getPrecio("ingrese precio  , por fa!!!",&unProducto.precios)==0){
+/*
+    printf("codigo:%s precio: %f \n",unProducto.codigo,unProducto.precio);
+
+       while(getPrecio("ingrese precio  , por fa!!!",&unProducto.precio)==0){
         printf("error ...");
        }
-
-
-        while(getCodigo("ingrese Codigo  , por fa!!!",unProducto.codigos)==0){
+        while(getCodigo("ingrese Codigo  , por fa!!!",unProducto.codigo)==0){
         printf("error ...");
        }
-    printf("codigo:%s precio: %f \n",unProducto.codigos,unProducto.precios);
+*/
 
      for(i=0;i<TAMANIO;i++)
     {
+        // con array de estructuras
+       while(getPrecio("ingrese precio  , por fa!!!",&ArrayDeProductos[i].precio)==0){
+        printf("error ...");
+       }
+        while(getCodigo("ingrese Codigo  , por fa!!!",ArrayDeProductos[i].codigo)==0){
+        printf("error ...");
+       }
+        /*
+        // con arrays paralelos
        while(getPrecio("ingrese precio  , por fa!!!",&precios[i])==0){
         printf("error ...");
        }
 
-
-        while(getCodigo("ingrese Codigo  , por fa!!!",codigos[i])==0){
+         while(getCodigo("ingrese Codigo  , por fa!!!",codigos[i])==0){
         printf("error ...");
-       }
+       }*/
 
     }
 
     for(i=0;i<TAMANIO;i++)
     {
-        printf("codigo:%s precio: %f \n",codigos[i],precios[i]);
+      //  printf("codigo:%s precio: %f \n",codigos[i],precios[i]);
+       printf("codigo:%s precio: %f \n",ArrayDeProductos[i].codigo,ArrayDeProductos[i].precio);
     }
 
     for(i=0;i<TAMANIO;i++)
     {
         for(j=0;j<TAMANIO;j++)
         {
-            if(precios[i]<precios[j])
+            if(ArrayDeProductos[i].precio<ArrayDeProductos[j].precio)
+            {
+                Producto aux=ArrayDeProductos[i];
+                ArrayDeProductos[i]=ArrayDeProductos[j];
+                ArrayDeProductos[j]=aux;
+            }
+            /*
+            //arrays paralelos, debo ordenar cada elemento
+              if(precios[i]<precios[j])
             {
                 int aux=precios[i];
                 precios[i]=precios[j];
@@ -75,12 +110,17 @@ int main()
                 strcpy(codigos[i],codigos[j]);
                 strcpy(codigos[j],auxCo);
 
-            }
+            }*/
         }
     }
+     printf("\n\n \t\tordenado \n\n");
+
+
     for(i=0;i<TAMANIO;i++)
     {
-        printf("codigo:%s precio: %f \n",codigos[i],precios[i]);
+        //printf("codigo:%s precio: %f \n",codigos[i],precios[i]);
+          printf("codigo:%s precio: %f \n",ArrayDeProductos[i].codigo,ArrayDeProductos[i].precio);
+
     }
     printf("De array a estruturas \n");
     return 0;
