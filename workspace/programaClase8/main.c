@@ -18,8 +18,8 @@ int main()
     char arrayNombres [QTY_EMPLEADOS] [50];
     int opcion;
     int lugarVacio;
-    //int i;
-    //testeando
+    //int i=0;
+
     strncpy(arrayNombres[0],"Juan",MAXIMO_NOMBRE);
     strncpy(arrayNombres[1],"Veronica",MAXIMO_NOMBRE);
     strncpy(arrayNombres[2],"Carolina",MAXIMO_NOMBRE);
@@ -47,20 +47,11 @@ int main()
                 }
                 lugarVacio= findEmpty(arrayNombres, QTY_EMPLEADOS);
                 strncpy(arrayNombres[lugarVacio],auxName,MAXIMO_NOMBRE);
-                //printf ("%s",arrayNombres[lugarVacio]);
             break;
 
             case 2 :
-                for (int i=0;(strncmp(arrayNombres[i],"\0",MAXIMO_NOMBRE)!=0);i++)
-                {
-                    printf ("%s\n",arrayNombres[i]);
-                }
-                /*i =0;
-                while (strncmp(arrayNombres[i],"\0",MAXIMO_NOMBRE)!=0)
-                {
-                    printf ("%s\n",arrayNombres[i]);
-                    i++;//hacer con for
-                }*/
+
+                printArray (arrayNombres, QTY_EMPLEADOS);
             break;
 
             case 3 :
@@ -152,9 +143,12 @@ int isValidName (char* cadena)
 int printArray (char arrayStr[][50], int limite)
 {
     int i;
-    for (i=0;i<=limite;i++)
+    for (i=0;i<limite;i++)
     {
-        printf ("%s\n",arrayStr[i]);
+        if (strncmp(arrayStr[i],"\0",limite)!=0)
+            {
+                printf ("%s\n",arrayStr[i]);
+            }
     }
     return 0;
 }
