@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1556774847 source:c:\users\nick\desktop\workspace\parcial_publicidad\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pantalla.h"
+	"publicidad.h"
+
+1556771807 source:c:\users\nick\desktop\workspace\parcial_publicidad\pantalla.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"funciones.h"
+	"pantalla.h"
+	<string.h>
+
+1556643129 source:c:\users\nick\desktop\workspace\parcial_publicidad\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+
+1556643192 source:c:\users\nick\desktop\workspace\parcial_publicidad\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1556643129 c:\users\nick\desktop\workspace\parcial_publicidad\validaciones.h
+
+1556643129 c:\users\nick\desktop\workspace\parcial_publicidad\funciones.h
+
+1556766506 c:\users\nick\desktop\workspace\parcial_publicidad\pantalla.h
+
+1556775160 source:c:\users\nick\desktop\workspace\parcial_publicidad\publicidad.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"funciones.h"
+	"pantalla.h"
+	"publicidad.h"
+	<string.h>
+
+1556774847 c:\users\nick\desktop\workspace\parcial_publicidad\publicidad.h
+
